@@ -1,17 +1,68 @@
-
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>JavaScript &amp; jQuery - Chapter 2: Basic JavaScript Instructions - Numeric Variable</title>
-    <link rel="stylesheet" href="css/c02.css" />
-  </head>
-  <body>
-    <h1>Elderflower</h1>
-    <div id="content">
-      <h2>Custom Signage</h2>
-      <div id="cost">Cost: $5 per tile</div>
-      <img src="images/preview.jpg" alt="Sign" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <style type="text/css">
+    .header{
+        display: flex;
+        padding: 6px 10px;
+        background-color: #000;
+    }
+    .header nav{
+        text-align: right;
+        /* display: flex; */
+        /* flex-direction: row; */
+        width: 100%;
+        /* justify-content: flex-end; */
+    }
+    .header nav a{
+        display: inline-block;
+        /* (.header 的圖片40px + 上下padding為6px)=52px */
+        line-height: 52px;
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="#"><img src="https://picsum.photos/id/684/80/40" alt="網站名稱"></a>
+        <nav>
+            <a href="#">About us</a>
+            <a href="#">Latest news</a>
+            <a href="#">Product</a>
+            <a href="#">Service</a>
+            <a href="#">Contact us</a>
+            <a href="#">Sitemap</a>
+        </nav>
     </div>
-    <script src="js/numeric-variable.js"></script>
-  </body>
+    <div class="banner">
+        <img src="https://picsum.photos/id/684/1200/300" alt="">
+    </div>
+
+    <!-- path:麵包屑，網站的路徑。 -->
+    <ul class="path">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Latest news</a></li>
+        <li><a href="#">Home</a></li>
+    </ul>
+    <div class="about">
+        <div class="wrap">
+            <div class="item">
+                <img src="https://picsum.photos/id/684/50/50">
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error animi culpa, totam distinctio sapiente quo, sequi perferendis recusandae, quas eaque ratione libero. Ad enim accusamus, ex officia maiores ipsum sit.</p> 
+                <img src="https://picsum.photos/id/684/50/50">
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error animi culpa, totam distinctio sapiente quo, sequi perferendis recusandae, quas eaque ratione libero. Ad enim accusamus, ex officia maiores ipsum sit.</p> 
+                <img src="https://picsum.photos/id/684/50/50">
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error animi culpa, totam distinctio sapiente quo, sequi perferendis recusandae, quas eaque ratione libero. Ad enim accusamus, ex officia maiores ipsum sit.</p> 
+            </div>
+
+        </div>
+    </div>
+    
+</body>
 </html>
