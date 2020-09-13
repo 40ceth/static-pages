@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="reset.css">
+    <!-- ../是指父層 -->
+    <link rel="stylesheet" type="text/css" href="..\css\reset.css">
     <style type="text/css">
     .header{
         display: flex;
@@ -12,21 +13,52 @@
         background-color: #000;
     }
     .header nav{
-        text-align: right;
         /* display: flex; */
         /* flex-direction: row; */
-        width: 100%;
         /* justify-content: flex-end; */
+        /* 把 text-align: right; 換成上面這三行可達一樣效果，而且這作法的超連結間不會有空白間格，所以也就不需要用 font-size: 0; 來消除超連結間空白間格，別擔心，待會會在 .header nav a{} ，再把 font-size 設定回來 */
+        text-align: right;
+        font-size: 0;
+
+        width: 100%;
     }
     .header nav a{
+        /* 讓該元素可以設定padding和高寬。 */
         display: inline-block;
-        /* (.header 的圖片40px + 上下padding為6px)=52px */
-        line-height: 52px;
+        /* 因為 .header 的圖片高40px */
+        line-height: 40px;
+        
+        font-size: 16px;
+        color: #fff;
+        text-decoration: none;
+        /* 讓超連結不會全部黏在一起。 */
+        padding: 0 7px;
+
+    }
+    .header a img{
+        /* 區塊和行內元素最大的區別就是,區塊可以設定寬、高、居中對齊等操作,而行內。而 img 標籤 是 inline 元素, 而 inline 元素預設是 baseline 對齊(可以搜尋：英文字母 baseline，會比較好理解 baseline 是啥。)的。當 baseline 對齊的時候 下方會有4px 的空隙。 
+        解決方法是對該元素設：vertical-align:bottom;
+        這是個針對行內元素十分實用的屬性 !!*/
+        vertical-align:bottom;
+    }
+    .banner img{
+        width: 100%;
+    }
+    .path {
+        display: flex;
+    }
+    .path li{
+        text-decoration: none;
+        font-size: 14px;
+        list-style-type: none;
+        padding: 0 6px;
     }
     </style>
 </head>
 <body>
     <div class="header">
+        <!-- /* https://www.itread01.com/p/654158.html */ -->
+        <!-- /* https://www.itread01.com/p/649225.html */ -->
         <a href="#"><img src="https://picsum.photos/id/684/80/40" alt="網站名稱"></a>
         <nav>
             <a href="#">About us</a>
