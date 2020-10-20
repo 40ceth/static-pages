@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var count = 0;
+
+        function cc(card) {
+            var errorMessage = "  Please enter correct number or letter.";
+            var bet = " Bet";
+            var hold = " Hold";
+
+            // (/^[0-9]+$/.test(card))：檢查card是否只有0到9的數字，且card不限內含的字元數。
+            // (/^[A-Z]+$/.test(card))：檢查card是否只有A到Z的字母，且card不限內含的字元數。
+            // (/^[0-9A-Z]+$/.test(card))：檢查card是否只有 A到Z的字母 和 0到9的數字 ，且card不限內含的字元數。
+            if (/^[0-9A-Z]+$/.test(card)) {
+                if (card >= 2 && card <= 6) {
+                    count++;
+                }
+                switch (card) {
+                    case 10:
+                    case 'J':
+                    case 'Q':
+                    case 'K':
+                    case 'A':
+                        count--;
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+            else {
+                if (count > 0) {
+                    return count + bet + errorMessage;
+                }
+                //   else{
+                //     return count + hold;
+                //   }
+                if (count < 0) {
+                    return count + hold + errorMessage;
+                }
+                if (count == 0) {
+                    return count + hold + errorMessage;
+                }
+
+            }
+
+
+            if (count > 0) {
+                return count + bet;
+            }
+            //   else{
+            //     return count + hold;
+            //   }
+            if (count < 0) {
+                return count + hold;
+            }
+            if (count == 0) {
+                return count + hold;
+            }
+        }
+
+        console.log(cc(2));
+        console.log(cc(3));
+        console.log(cc(7));
+        console.log(cc('K'));
+        console.log(cc('A'));
+        console.log(cc('$'));
+        console.log(cc('H2R4'));
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

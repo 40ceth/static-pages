@@ -1,0 +1,107 @@
+<!-- Overview總覽 & Form controls -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+    integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+
+  <title>Hello, world!</title>
+</head>
+
+<body>
+  <h1>Hello, world!</h1>
+  <div class="container">
+    <div class="row">
+      <!-- Overview(Overview總覽) -->
+      <!-- mx-auto：水平居中 
+      my-5：讓該元素在垂直軸方面(上 和 下)可以和其他元素(這裡應該是指 body )有一定的距離，這裡是為了讓這個元素可以下來一點-->
+      <div class="col-6 mx-auto my-5">
+
+        <!-- 別忘了外面要加這個form -->
+        <form>
+
+          
+          <div class="mb-3">
+            <!-- label 這裡會添加一個 class="form-label" ，賦予此 label 有 margin-bottom: .5rem; ，就這樣而已 -->
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+
+            <!-- input 這裡會添加一個 class="form-control" ，form-control 主要是控制了 input 寬度.框線.圓角.尺寸....，透過賦予元素這些css設定，讓表單成為一般我們常見的表單的樣子。你可以試著去掉 class="form-text" 看看有何變化 -->
+            <input type="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp">
+
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+
+
+          <!-- Readonly(Form controls) -->
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <!-- readonly：讓該 input 輸入框變成唯讀 -->
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+
+
+          <!-- Readonly plain text(Form controls) -->
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <!-- form-control-plaintext + value=""：讓框框可以有預設的字串，且使用者可以編輯此字串。 -->
+            <!-- readonly：讓該 input 輸入框變成唯讀 -->
+            <input type="email" class="form-control form-control-plaintext" value="Readonly plain text +.+"
+              id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+
+            <input type="email" class="form-control form-control-plaintext" value="Readonly plain text 0.0"
+              id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+
+
+          <!-- Colorb選顏色(Form control) -->
+          <div class="col-3">
+            <label for="exampleColorInput" class="form-label">Color picker</label>
+            <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c"
+              title="Choose your color">
+          </div>
+
+
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+
+
+          <!-- btn 和 btn-primary 在 button 那邊有介紹，可以回去看看。 -->
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper.js -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"
+    integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper.js and Bootstrap JS
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js" integrity="sha384-5h4UG+6GOuV9qXh6HqOLwZMY4mnLPraeTrjT5v07o347pj6IkfuoASuGBhfDsp3d" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

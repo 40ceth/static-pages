@@ -1,0 +1,74 @@
+<!-- Overflow -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+    integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+
+  <title>Hello, world!</title>
+  <style>
+    .gg {
+      /* width: 200px; */
+      height: 100px;
+    }
+    .pic{
+      width: 200px;
+      height: 200px;
+      /* 讓pic變成圓形的容器 */
+      border-radius: 50%;
+    }
+    .pic img{
+      /* 在圖片的高度寬度都自動100%，填滿元素的寬度及高度(維持原比例)，通常會剪掉部分的物件。 */
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Hello, world!</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <!-- verflow-auto：在有文字會超出容器的時，會自動生出一個卷軸。
+        通常用在會員條款。 -->
+        <div class="gg overflow-auto">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero non voluptate cum
+          quae deleniti, amet veniam et nisi explicabo eum maxime accusantium laudantium perspiciatis delectus
+          dignissimos vel dicta, omnis voluptatibus?</div>
+      </div>
+      <div class="col-3">
+        <!-- overflow-hidden：將不顯示超出容器的文字。
+        通常用來藏圖片。 -->
+        <div class="gg overflow-hidden">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero non voluptate cum
+          quae deleniti, amet veniam et nisi explicabo eum maxime accusantium laudantium perspiciatis delectus
+          dignissimos vel dicta, omnis voluptatibus?</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pic overflow-hidden">
+    <img class="w-100 h-100" src="https://picsum.photos/id/684/200/150" alt="">
+    <!--  -->
+  </div>
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper.js -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"
+    integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper.js and Bootstrap JS
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js" integrity="sha384-5h4UG+6GOuV9qXh6HqOLwZMY4mnLPraeTrjT5v07o347pj6IkfuoASuGBhfDsp3d" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

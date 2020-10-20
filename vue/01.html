@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>{{message}}{{num+1}}</h1>
+        <!-- v-bind:href="ythref"  ：讓 href="ythref" 變成 href="https://www.youtube.com/" ，也就是讓下面的 ythref 可以連接到在這裡的 vue 實例中的 ythref: "https://www.youtube.com/" 。 -->
+        <!-- v-bind:data-id='message' ：讓 data-id='message' 中的 message 可以連接到在下面的 vue 實例中的 message: 'hello vue' 。 -->
+        <!-- v-bind:  縮寫是 : ，所以  :data-id='message'  等於  v-bind:data-id='message'  -->
+        <a v-bind:href="ythref" v-bind:data-id='message'> youtube</a>
+
+        <div>
+            <h1>條件渲染</h1>
+            <!-- v-if=''  ：當''中為 ture 時，會顯示  <div v-if='see'>gg see:false</div> 。 -->
+            <!-- 如果在網頁中的 console 裡打上 app.see=false  ， <div v-if='see'>gg see:false</div> 就會消失。 -->
+            <div v-if='see'>v-if='ture'</div>
+
+            <!-- v-else  ：當前一個標籤的 v-if='false'時，才會顯示。 -->
+            <div v-else>v-if='false'</div>
+            <!-- v-show='see'  ：v-show='true' 時顯示此標籤，如果為 false 時，此標籤會添加 style="display: none;" ，也就是不顯示此標籤。 -->
+            <div v-show='see'>v-show='true'</div>
+        </div>
+        <div class="v-for">
+            <ul>
+                <h1>v-for</h1>
+                <!-- v-for  ：用於循環 -->
+                <!-- persons ：在下面名為 app 的 vue 實例中的陣列。 -->
+                <!-- item ：指的是{name:zack,age:26} {name:gege,age:18} {name:havfy,age:23} 這三個在陣列裡的東西。 -->
+                <li v-for='item in persons'>
+                    I am {{item.name}} , {{item.age}} ago.
+                </li>
+
+                <!-- v-for='(item,index) in persons' 和 v-for='(index,item) in persons' 是不一樣的意思。 -->
+                <li v-for='(item,index) in persons'>
+                    {{index+1}}. I am {{item.name}} , {{item.age}} ago.
+                </li>
+            </ul>
+            <ul>
+                <li v-for='item in obj'>
+                    {{item}}
+                </li>
+
+                <!-- v-for='(item,name) in obj' 和 v-for='(name,item) in obj'  是不一樣的意思。 -->
+                <!-- v-for='(item,name) in obj' 中的 name，指的是 key (也就是 {name:7185,age:26} 中的 name 和 age ) -->
+                <li v-for='(item,name) in obj'>
+                    {{name}}：{{item}}
+                </li>
+            </ul>
+        </div>
+
+        <div class="v-on">
+            <h1>v-on</h1>
+            <!-- v-on:click  ：監聽事件 -->
+            <!-- v-on  ：這個指令也可以監聽所有的原生事件 -->
+            <!-- v-on:click='see = !see'  ：click(點擊button)時改變see -->
+            <button v-on:click="see = !see">click me</button>
+
+            <h1>v-on</h1>
+            <!-- v-on:click  ：監聽 click 事件 -->
+            <!-- v-on:click="clickfn('hello')"   ：對應到下面 methods 裡的 clickfn 函式 -->
+            <!-- v-on:click="clickfn('hello')" 中的 ('hello') 是為了下面 alert(val) 中的 val 而寫的。如果不要彈框功能，可以只寫 v-on:click="clickfn" 來使用這個函式並把下面的 clickfn 函式中的 alert(val) 去掉即可。 -->
+            <button v-on:click="clickfn('hello')">click me</button>
+
+            <!-- v-on:input  ：監聽 input 事件。當鍵盤輸入input時，會執行下面 methods 裡的 clickfn 函式 -->
+            <!-- v-on: 的縮寫是 @ ，也就是說這行 <input @input='clickfn' type="text"> 和下面那行一樣效果-->
+            <!-- v-model='textval'  ：把 textval 綁定到此 input 。 -->
+            <input @input='clickfn' type="text" v-model='textval'>{{textval}}
+        </div>
+
+        <div class="v-model">
+            <h1>v-model</h1>
+            <!-- 雙向的數據綁定通常用在表單上(form) -->
+            <!-- 單選框資料用 v-model 進行綁定  -->
+            <form action="">
+                <label for="a">A </label>
+                <!-- type="radio"	：input作為單選按钮時。 -->
+                <!-- value  ：<input type="radio"> 中必须設置 value 属性。 -->
+                <input type="radio" value="0" id='a' v-model='radioVal'>
+                <label for="b">B </label>
+                <input type="radio" value="1" id='b' v-model='radioVal'>
+                <label for="c">C </label>
+                <input type="radio" value="2" id='c' v-model='radioVal'>
+                {{radioVal}}
+            </form>
+            <form action="">
+                <label for="d">D </label>
+                <!-- type="radio"	：input作為單選按钮時。 -->
+                <!-- value  ：<input type="radio"> 中必须設置 value 属性。 -->
+                <input type="checkbox" value="0" id='d' v-model='checkboxVal'>
+                <label for="e">E </label>
+                <input type="checkbox" value="1" id='e' v-model='checkboxVal'>
+                <label for="f">F </label>
+                <input type="checkbox" value="2" id='f' v-model='checkboxVal'>
+                {{checkboxVal}}
+            </form>
+            <form action="">
+                <label for="g">G </label>
+                <!-- type="radio"	：input作為單選按钮時。 -->
+                <!-- value  ：<input type="radio"> 中必须設置 value 属性。 -->
+                <!-- checkboxVal2  是因為下面初始化時有 [] ，才可以個別將 value 值照點擊順序放入 [] 中。 -->
+                <input type="checkbox" value="0" id='g' v-model='checkboxVal2'>
+                <label for="h">H </label>
+                <input type="checkbox" value="1" id='h' v-model='checkboxVal2'>
+                <label for="i">I </label>
+                <input type="checkbox" value="2" id='i' v-model='checkboxVal2'>
+                {{checkboxVal2}}
+            </form>
+        </div>
+
+        <!-- option 有 value ，{{selectVal}}就顯示 value的值，如沒有，就顯示 option 中的字元。 -->
+        <select name="" id="" v-model='selectVal'>
+            <option value="1">A</option>
+            <option value="2">B</option>
+            <option>C</option>
+            <option>D</option>
+        </select>
+        {{selectVal}}
+    </div>
+
+
+
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // 創建一個vue實例。要在 id=app 的標籤中， 才能使用此 vue 實例裡面所設定的東西。
+        // Vue ：注意V是大寫
+        var app = new Vue({
+
+            // 用 el id 來掛載到 DOM 結構，這個el 選項就是我們要控制的DOM。現在 div.app 由此 vue 實例控制。
+            el: '#app',
+
+            // data：用於響應的數據
+            data: {
+
+                // 加一個message屬性
+                message: 'hello vue',
+
+                num: 1,
+
+                // 在上面 a (超連結)裡的 href 屬性前加上 v-bind: ，即可讓該超連結裡的 href 屬性的 ythref 變成 "https://www.youtube.com/" 。
+                // 如在 網頁的console 裡打上 app.ythref='https://cn.vuejs.org/v2/api/'，那網頁中的 href="https://www.youtube.com/" ，將變成 href="https://cn.vuejs.org/v2/api/" 。
+                ythref: "https://www.youtube.com/",
+                see: true,
+
+                // 初始化一個用戶列表數組變量
+                persons: [{ name: "zack", age: 26 }, { name: "gege", age: 18 }, { name: 5500, age: 23 }],
+
+                // 初始化一個對象
+                obj: { name: 7185, age: 26 },
+
+                // 你可以初始一個值給這些...."變數"
+                textval: '123',
+                // textval: '',
+                radioVal: '',
+                checkboxVal: '8787',
+                // checkboxVal: '',
+                // checkboxVal2: 11111,
+                checkboxVal2: [55555],
+                // checkboxVal2: [],
+                selectVal: '6589',
+                // selectVal:'',
+
+            },
+
+            // vue的事件監聽
+            methods: {
+                // function (val) 中的 (val) 是為了下面 alert(val) 而寫的，如果沒有彈框功能，可以不寫。
+                clickfn: function (val) {
+                    // 這裡的 this 是為了讓這裡的 see 使用 data 裡的 see 的值。
+                    this.see = !this.see;
+
+                    // alert ：彈框
+                    // alert(val)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,259 @@
+<!-- Collapse收合區塊 -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+        integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <h1>Hello, world!</h1>
+
+    <!-- Example(Collapse收合區塊) -->
+    <!-- 主要是裡用 data-toggle="collapse" data-target="#collapseExample" 這兩個屬性來完成此功能。 -->
+    <div data-toggle="collapse" data-target="#collapseExample">大頭金魚亂玩的Collapse收合區塊</div>
+
+    <p>
+        <!-- 此為用 a(超連結) 控制。把這裡的 a 的 href="#collapseExample"(錨點) ，換成 button 用的 data-target="#collapseExample"，也會正常運作。 -->
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+            aria-controls="collapseExample">
+            Link with href
+        </a>
+
+        <!-- 此為用 button 控制。這裡的 data-target="#collapseExample" 跟下面 div 的 id="collapseExample" 是相對應的，data-target="#collapseExample"的 # 代表 id -->
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+            aria-expanded="false" aria-controls="collapseExample">
+            Button with data-target
+        </button>
+    </p>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+
+            <!-- class="col-4"：讓此區塊占4個欄位 -->
+            <div class="col-4">
+                <!-- Accordion example 01(Collapse收合區塊) -->
+                <!-- 如果直接複製兩個 Accordion example (Collapse收合區塊)，那 Accordion example (Collapse收合區塊) 很可能會因為有兩個相同的 id 而不正常工作(其實 id 本來在任何情況下都不該重複)。所以這裡會把下面第二組的 Accordion example (Collapse收合區塊) 裡的 id (這裡為id="accordionExample"和)和data-parent 的值(因為這裡的data-parent的值中有#，表示是指向 id )都加上02。 -->
+                <div class="accordion" id="accordionExample">
+
+                    <!-- 下面的div class="card"  div class="card-header  div class="card-body" 為之前教的卡片組件 -->
+                    <div class="card">
+                        <div class="card-header p-0" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-light btn-block text-left p-3 rounded-0" type="button"
+                                    data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                    Collapsible Group Item #1
+                                </button>
+                            </h2>
+                        </div>
+
+                        <!-- 這裡的 data-parent="#accordionExample" 中有 # ，代表是指向 id 為 accordionExample 的元件， -->
+                        <!-- div class="collapse show ：在 Collapse收合區塊 中，會收合的區塊 -->
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                                squid. 3
+                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                nesciunt laborum
+                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                                coffee nulla
+                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                cred nesciunt
+                                sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                                accusamus
+                                labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header p-0" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-light btn-block text-left collapsed p-3 rounded-0" type="button"
+                                    data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                    aria-controls="collapseTwo">
+                                    Collapsible Group Item #2
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                                squid. 3
+                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                nesciunt laborum
+                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                                coffee nulla
+                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                cred nesciunt
+                                sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                                accusamus
+                                labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header p-0" id="headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn btn-light btn-block text-left collapsed p-3 rounded-0" type="button"
+                                    data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    Collapsible Group Item #3
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                                squid. 3
+                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                nesciunt laborum
+                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                                coffee nulla
+                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                cred nesciunt
+                                sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                                accusamus
+                                labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- class="col-8"：讓此區塊占8個欄位 -->
+            <div class="col-8">
+                <!-- Accordion example 02(Collapse收合區塊) -->
+                <div class="accordion" id="accordionExample02">
+                    <div class="card">
+                        <div class="card-header p-0" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-light btn-block text-left p-3 rounded-0" type="button"
+                                    data-toggle="collapse" data-target="#collapseOne02" aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                    Collapsible Group Item #1
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseOne02" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordionExample02">
+                            <div class="card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                                squid. 3
+                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                nesciunt laborum
+                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                                coffee nulla
+                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                cred nesciunt
+                                sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                                accusamus
+                                labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header p-0" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-light btn-block text-left collapsed p-3 rounded-0" type="button"
+                                    data-toggle="collapse" data-target="#collapseTwo02" aria-expanded="false"
+                                    aria-controls="collapseTwo">
+                                    Collapsible Group Item #2
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo02" class="collapse" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample02">
+                            <div class="card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                                squid. 3
+                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                nesciunt laborum
+                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                                coffee nulla
+                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                cred nesciunt
+                                sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                                accusamus
+                                labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header p-0" id="headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn btn-light btn-block text-left collapsed p-3 rounded-0" type="button"
+                                    data-toggle="collapse" data-target="#collapseThree02" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    Collapsible Group Item #3
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseThree02" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordionExample02">
+                            <div class="card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                                squid. 3
+                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                nesciunt laborum
+                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                                coffee nulla
+                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                cred nesciunt
+                                sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                                accusamus
+                                labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper.js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"
+        integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper.js and Bootstrap JS
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js" integrity="sha384-5h4UG+6GOuV9qXh6HqOLwZMY4mnLPraeTrjT5v07o347pj6IkfuoASuGBhfDsp3d" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

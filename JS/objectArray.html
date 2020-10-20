@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var myDog = {
+            //"name"為屬性(properties)，一般來說，鍵值不會加””，所以這裡鍵和件值的配對，常見的寫法應該是 name: "Whiskers" 。
+            //每個屬性是用 ” , ” (逗號)來分開的，在物件的{}的結尾才有 ” ; ”(分號)
+            "name": "zack",
+            "legs": 4,
+            legs2:8,
+            2: 8888,
+            "tails jj": 9,
+            "friends": ["cary", "gofy", "cafoty"],
+        };
+
+        // console.log(myDog."name");  ：這是錯誤的寫法。
+        console.log(myDog.name);
+        console.log(myDog.legs);
+        console.log(myDog[2]);
+        console.log(myDog["legs2"]);
+        //console.log(myDog.tails jj);  ：這是錯誤的寫法。因為帶有 空格 的特性名稱必須用引號引起來（單或雙）。並用括號表示法( [ ] ) 來引用該特性。使用括號表示法( [ ] )時，只要特性名稱不是純數字，就都要用引號(雙或單)將特性名稱包起來。
+        console.log(myDog["tails jj"]);
+        console.log(myDog["friends"]);
+        console.log(myDog.friends);
+
+
+        // Setup
+        var testObj = {
+            12: "Namath",
+            16: "Montana",
+            19: "Unitas"
+        };
+
+        var playerNumber = 16;       
+        var player = testObj[playerNumber];   
+        console.log(player);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

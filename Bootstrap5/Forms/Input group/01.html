@@ -1,0 +1,107 @@
+<!-- Input group輸入群組 -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+    integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+
+  <title>Hello, world!</title>
+</head>
+
+<body>
+  <h1>Hello, world!</h1>
+  <!-- Basic example(Input group輸入群組) -->
+  <div class="container">
+    <div class="row">
+      <div class="col-8 mx-auto my-5">
+        <!-- 別忘了外面要加這個form -->
+        <form action="">
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">信箱：</span>
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <span class="input-group-text">@gmail.com</span>
+          </div>
+
+          <!-- Multiple inputs就中間再多個輸入框(input)(Input group輸入群組) -->
+          <div class="input-group mb-3">
+            <span class="input-group-text">信箱2222：</span>
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <span class="input-group-text">@gmail.com</span>
+          </div>
+
+          <!-- Multiple addons就再多了一個span(Input group輸入群組) -->
+          <div class="input-group mb-3">
+            <span class="input-group-text">信箱2222：</span>
+            <span class="input-group-text">信箱2222：</span>
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <span class="input-group-text">@gmail.com</span>
+            <span class="input-group-text">@gmail.com</span>
+            <span class="input-group-text">@gmail.com</span>
+          </div>
+
+          <!-- Button addons加上按鈕(Input group輸入群組) -->
+          <div class="input-group mb-3">
+            <span class="input-group-text">信箱：</span>
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <span class="input-group-text">@gmail.com</span>
+            <!-- 忘了可以回去看BS5裡的Components裡的Button -->
+            <button class="btn btn-info">送出</button>
+          </div>
+
+          <!-- Custom select輸入框可以有下拉並顯示選單(Input group輸入群組) -->
+          <div class="input-group mb-3">
+            <!-- 這裡 label 的 for="inputGroupSelect01" 和 select 的 id="inputGroupSelect01" 相呼應。 -->
+            <label class="input-group-text" for="inputGroupSelect01">Options</label>
+            <select class="form-select" id="inputGroupSelect01">
+              <option selected>請選擇</option>
+              <option value="1">一般會員</option>
+              <option value="2">訂閱會員</option>
+              <option value="3">超級會員</option>
+            </select>
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <span class="input-group-text">@gmail.com</span>
+          </div>
+
+          <!-- Custom file input上傳檔案(Input group輸入群組) -->
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroupFileAddon01">上傳檔案</span>
+            <div class="form-file">
+              <input type="file" class="form-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+              <label class="form-file-label" for="inputGroupFile01">
+                <span class="form-file-text">選擇檔案...</span>
+                <span class="form-file-button">瀏覽</span>
+              </label>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper.js -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"
+    integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper.js and Bootstrap JS
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js" integrity="sha384-5h4UG+6GOuV9qXh6HqOLwZMY4mnLPraeTrjT5v07o347pj6IkfuoASuGBhfDsp3d" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
