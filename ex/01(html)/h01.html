@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- ../是指父層 -->
+    <link rel="stylesheet" type="text/css" href="h01.css">
+    <style type="text/css">
+    .header{
+        display: flex;
+        padding: 6px 10px;
+        background-color: #000;
+    }
+    .header nav{
+        /* display: flex; */
+        /* flex-direction: row; */
+        /* justify-content: flex-end; */
+        /* 把 text-align: right; 換成上面這三行可達一樣效果，而且這作法的超連結間不會有空白間格，所以也就不需要用 font-size: 0; 來消除超連結間空白間格，別擔心，待會會在 .header nav a{} ，再把 font-size 設定回來 */
+        text-align: right;
+        font-size: 0;
+
+        width: 100%;
+    }
+    .header nav a{
+        /* 讓該元素可以設定padding和高寬。 */
+        display: inline-block;
+        /* 因為 .header 的圖片高40px */
+        line-height: 40px;
+        
+        font-size: 16px;
+        color: #fff;
+        text-decoration: none;
+        /* 讓超連結不會全部黏在一起。 */
+        padding:0 7px;
+
+    }
+    .header a img{
+        /* 區塊和行內元素最大的區別就是,區塊可以設定寬、高、居中對齊等操作,而行內。而 img 標籤 是 inline 元素, 而 inline 元素預設是 baseline 對齊(可以搜尋：英文字母 baseline，會比較好理解 baseline 是啥。)的。當 baseline 對齊的時候 下方會有4px 的空隙。 
+        解決方法是對該元素設：vertical-align:bottom;
+        這是個針對行內元素十分實用的屬性 !!*/
+        vertical-align:bottom;
+    }
+    .banner img{
+        width: 100%;
+    }
+    .path {
+        display: flex;
+    }
+    .path li{
+        font-size: 14px;
+        list-style-type: none;
+        padding: 6px;
+        position: relative;
+    }
+    .path li a{
+        text-decoration: none;
+        color: rgb(68, 68, 68);
+    }
+    .path li+li::before{
+        content: "/";
+        position: absolute;
+        left:-2px
+    }
+    .about .wrap{
+        width: 960px;
+        /* 讓wrap置中 */
+        margin: auto;
+        padding: 10px 0 30px;
+    }
+    .about .wrap{
+        display: flex;
+    }
+    .about .item{
+        width: auto;
+        text-align: center;
+        padding: 5px 10px;
+    }
+    .about .item img{
+        /* 讓圖案變成圓形的 */
+        border-radius: 50%;
+    }
+    /* > 表示只針對about下面第一層的h2 */
+    .about > h2{
+        /* 設定區塊元素的 width 屬性，可以避免該元素從左到右撐滿容器，然後你可以設定 margin: auto; 來使其水平與垂直為置中。 */
+        width: 960px;
+        margin: auto;
+
+        text-align: center;
+        font-size: 40px;
+        padding: 20px 0;
+    }
+    .about > p{
+        /* 讓一行的字不要太長 */
+        width: 760px;
+
+        padding: 0 0 20px ;
+        margin: auto;
+        text-align: center;
+    }
+    .about h3{
+        font-size: 20px;
+        padding: 0 0 20px;
+    }
+    .products{
+        background-color: rgb(94, 131, 255);
+    }
+    .products .wrap{
+        display: flex;
+    }
+    .products .item{
+        /* 讓 products 下的兩個 item 各佔一半的寬 */
+        width: 50%;
+    }
+    .products .item img{
+        /* 讓img的 最大寬度 為 直接容器元素 的寬，這樣可避免圖片因寬度太大，而超出 直接容器元素 ，導致跟右邊的P重疊。 */
+        width: 100%;
+
+        /* 區塊和行內元素最大的區別就是,區塊可以設定寬、高、居中對齊等操作,而行內。而 img 標籤 是 inline 元素, 而 inline 元素預設是 baseline 對齊(可以搜尋：英文字母 baseline，會比較好理解 baseline 是啥。)的。當 baseline 對齊的時候 下方會有4px 的空隙。 
+        解決方法是對該元素設：vertical-align:bottom;
+        這是個針對行內元素十分實用的屬性 !!*/
+        vertical-align: bottom;
+    }
+    .products h3{
+        font-size: 20px;
+        padding: 0 0 20px;
+    }
+    .products .pic{}
+    .products .text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .service{
+        background-color: rgb(89, 214, 252);
+        padding: 40px;
+    }
+    .service >h2{
+        width: 960px;
+        margin: auto;
+        text-align: center;
+        font-size: 40px;
+        padding: 0 0 10px;
+    }
+    .service >p{
+        width: 960px;
+        margin: auto;
+        text-align: center;
+        padding: 0 0 20px;
+    }
+    .service .wrap{
+        display: flex;
+    }
+    .service .item{
+        width: 25%;
+        padding:5px
+    }
+    .service .item img{
+        width: 100%;
+    }
+    .service .item h3{
+        padding: 5px 0 0;
+        text-align: center;
+        font-size: 20px;
+    }
+    .service .item p{
+        padding: 20px 0 0;
+    }
+
+
+    .footer{
+        padding: 20px 20px;
+        text-align: right;
+        background-color: black;
+        color: white;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <!-- /* https://www.itread01.com/p/654158.html */ -->
+        <!-- /* https://www.itread01.com/p/649225.html */ -->
+        <a href="#"><img src="https://picsum.photos/id/684/80/40" alt="網站名稱"></a>
+        <nav>
+            <a href="#">About us</a>
+            <a href="#">Latest news</a>
+            <a href="#">Product</a>
+            <a href="#">Service</a>
+            <a href="#">Contact us</a>
+            <a href="#">Sitemap</a>
+        </nav>
+    </div>
+
+    <div class="banner">
+        <img src="https://picsum.photos/id/684/1200/300" alt="">
+    </div>
+
+    <!-- path:麵包屑，網站的路徑。 -->
+    <ul class="path">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Latest news</a></li>
+        <li><a href="#">Home</a></li>
+    </ul>
+
+    <div class="about">
+        <h2>About us</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, earum veritatis? Magnam velit deserunt incidunt ratione odit facere maxime non deleniti in saepe dicta sunt cumque nostrum iusto, quibusdam nisi.</p>
+        <div class="wrap">      
+            <div class="item">
+                <img src="https://picsum.photos/id/684/50/50">
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error animi culpa, totam distinctio sapiente quo, sequi perferendis recusandae, quas eaque ratione libero. Ad enim accusamus, ex officia maiores ipsum sit.</p> 
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/id/684/50/50">
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error animi culpa, totam distinctio sapiente quo, sequi perferendis recusandae, quas eaque ratione libero. Ad enim accusamus, ex officia maiores ipsum sit.</p> 
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/id/684/50/50">
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error animi culpa, totam distinctio sapiente quo, sequi perferendis recusandae, quas eaque ratione libero. Ad enim accusamus, ex officia maiores ipsum sit.</p> 
+            </div>
+
+        </div>
+    </div>
+
+    <div class="products">
+        <div class="wrap">
+            <div class="item pic">
+                <img src="https://picsum.photos/id/684/600/400" alt="">
+            </div>
+            <div class="item text">
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat enim rem deserunt quod possimus. Saepe quam rem facere corporis dignissimos explicabo corrupti, ratione cum ab consectetur illum repellat, earum quod?</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="service">
+        <h2>服務項目</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quis pariatur omnis voluptates, dolore velit voluptatum molestias minima, dolorum perferendis iure laudantium vel! Neque ducimus aut vel vero mollitia quae!</p>
+        <div class="wrap">
+            <div class="item">
+                <img src="https://picsum.photos/id/684/450/400" alt="">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum numquam id voluptates voluptatibus quos quas repellendus consequuntur rem possimus temporibus, maxime odit impedit quo labore saepe illo dolorum molestiae delectus.</p>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/id/684/450/400" alt="">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum numquam id voluptates voluptatibus quos quas repellendus consequuntur rem possimus temporibus, maxime odit impedit quo labore saepe illo dolorum molestiae delectus.</p>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/id/684/450/400" alt="">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum numquam id voluptates voluptatibus quos quas repellendus consequuntur rem possimus temporibus, maxime odit impedit quo labore saepe illo dolorum molestiae delectus.</p>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/id/684/450/400" alt="">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum numquam id voluptates voluptatibus quos quas repellendus consequuntur rem possimus temporibus, maxime odit impedit quo labore saepe illo dolorum molestiae delectus.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; copyright 2020 by LIN 
+    </div>
+</body>
+</html>

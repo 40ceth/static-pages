@@ -12,13 +12,18 @@
 
     <div id="app">
         <h1>{{message}}{{num+1}}</h1>
+
+        <!-- reverse()  ：數組的反轉。 -->
+        <!-- <h2>{{message.split('').reverse().join('')}}</h2> -->
+        <!-- {{message.split('').reverse().join('')}}  ：不建議直接寫在這，這不是vue的初衷。 -->
+        <h2>{{reversedMessage}}</h2>
         <!-- v-bind:href="ythref"  ：讓 href="ythref" 變成 href="https://www.youtube.com/" ，也就是讓下面的 ythref 可以連接到在這裡的 vue 實例中的 ythref: "https://www.youtube.com/" 。 -->
         <!-- v-bind:data-id='message' ：讓 data-id='message' 中的 message 可以連接到在下面的 vue 實例中的 message: 'hello vue' 。 -->
         <!-- v-bind:  縮寫是 : ，所以  :data-id='message'  等於  v-bind:data-id='message'  -->
         <a v-bind:href="ythref" v-bind:data-id='message'> youtube</a>
 
         <div>
-            <h1>條件渲染</h1>
+            <h1>v-if v-else v-show 條件渲染</h1>
             <!-- v-if=''  ：當''中為 ture 時，會顯示  <div v-if='see'>gg see:false</div> 。 -->
             <!-- 如果在網頁中的 console 裡打上 app.see=false  ， <div v-if='see'>gg see:false</div> 就會消失。 -->
             <div v-if='see'>v-if='ture'</div>
@@ -90,6 +95,8 @@
                 <input type="radio" value="2" id='c' v-model='radioVal'>
                 {{radioVal}}
             </form>
+
+            <!-- 這個跟下面一個的實際差別是v-model='' 裡綁定的值在初始化時是否有 [] 。 -->
             <form action="">
                 <label for="d">D </label>
                 <!-- type="radio"	：input作為單選按钮時。 -->
@@ -139,9 +146,10 @@
             el: '#app',
 
             // data：用於響應的數據
+            // data裡每個宣告後面都要加 " , "
             data: {
 
-                // 加一個message屬性
+                // 在 data 中宣告(聲明) message 屬性，並賦予 message 一個值
                 message: 'hello vue',
 
                 num: 1,
@@ -172,6 +180,7 @@
             },
 
             // vue的事件監聽
+            // 使用的資料不管有無改變都要重新計算
             methods: {
                 // function (val) 中的 (val) 是為了下面 alert(val) 而寫的，如果沒有彈框功能，可以不寫。
                 clickfn: function (val) {
@@ -180,8 +189,19 @@
 
                     // alert ：彈框
                     // alert(val)
-                }
-            }
+                },
+            },
+
+            // 使用的資料有改變才會重新計算
+            // 如果 vue 裡的某個 methods 函式(上面的)執行，導致頁面重新渲染，那麼所有的 methods 函式會重新執行以及時的渲染頁面，但是大量函式的重新沒有必要的執行會導致效能的下降，此時如果把沒有必要再次執行的方法定義到 computed 裡，那麼這些沒有必要執行的方法就不會在頁面被渲染時執行。
+            // 只有在 computed 函式所依賴的資料有變化時才會被執行，这就意味着只要 message 还没有發生改變，不管你訪問多少次， reversedMessage 計算屬性會立即返回之前的計算结果，而不會再次執行函数。你使用 reversedMessage: function 時才會需要重新計算。而 methods 是每使用一次，不管 message 有沒有變化都要重算一次。
+            computed: {
+                // 反轉 message 字串
+                reversedMessage: function () {
+                    // message 不是一個全局變量，所以要加 this 來指定所在的 vue 實例中的 message
+                    return this.message.split('').reverse().join('')
+                },
+            },
         })
     </script>
 </body>
